@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div id="calcuolor">
+      <input type="text" readonly class="cal1" />
+      <div class="btn-parent">
+        <button
+          class="btn"
+          onclick=" num = ' '
+        document.querySelector('.cal1').value = num;"
+        >
+          C
+        </button>
+        <button
+          class="btn"
+          onclick=" num = num+ '1'
+        document.querySelector('.cal1').value = num;
+        "
+        >
+          1
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '2'
+        document.querySelector('.cal1').value = num;"
+        >
+          2
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '+'
+        document.querySelector('.cal1').value = num;"
+        >
+          +
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '3'
+        document.querySelector('.cal1').value = num;"
+        >
+          3
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '4'
+        document.querySelector('.cal1').value = num;"
+        >
+          4
+        </button>
+        <button class="btn">-</button>
+        <button
+          class="btn"
+          onclick="num = num+ '5'
+        document.querySelector('.cal1').value = num;"
+        >
+          5
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '6'
+        document.querySelector('.cal1').value = num;"
+        >
+          6
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '*'
+        document.querySelector('.cal1').value = num;"
+        >
+          *
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '7'
+        document.querySelector('.cal1').value = num;"
+        >
+          7
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '8'
+        document.querySelector('.cal1').value = num;"
+        >
+          8
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '/'
+        document.querySelector('.cal1').value = num;"
+        >
+          /
+        </button>
+        <button
+          class="btn"
+          onclick=" let result = eval(num);
+                    num = result;
+              document.querySelector('.cal1').value = num;
+          "
+        >
+          =
+        </button>
+        <button
+          class="btn"
+          onclick="num = num+ '9'
+        document.querySelector('.cal1').value = num;"
+        >
+          9
+        </button>
+        <button
+          class="btn"
+          onclick="
+        num = num+ '0'
+        document.querySelector('.cal1').value = num;"
+        >
+          0
+        </button>
+        <button class="btn" onclick="">.</button>
+      </div>
+    </div>
+    <script>
+      var num = "";
+      document.querySelector(".cal1").value = num;
+    </script>
+  </body>
+</html>

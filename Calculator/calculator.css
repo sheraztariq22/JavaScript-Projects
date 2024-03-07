@@ -1,0 +1,28 @@
+#calcuolor {
+  border: 1px black solid;
+  height: 400px;
+  width: 200px;
+  border-radius: 2px;
+}
+
+.cal1 {
+  margin: 15px;
+  border: 1px black solid;
+  height: 50px;
+  width: 150px;
+  border-radius: 3px;
+}
+
+.btn-parent {
+  padding: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 1px white;
+  margin: 1px;
+}
