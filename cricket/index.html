@@ -12,8 +12,21 @@
       <button
         class="btn"
         onclick="
-           randomPlay();
-           display();
+           let computerChoice = randomPlay();
+
+           if(computerChoice === 'Bat'){
+              result = 'Tie!'
+           } else if(computerChoice === 'Ball')
+           {
+              result = 'User Won!'
+           }
+           else
+           {
+             result = 'Computer Won!'
+           }
+
+           alert(`you Hava choosen bat and compputer choose ${computerChoice} and ${result}`)
+         
         "
       >
         Bat
@@ -21,8 +34,21 @@
       <button
         class="btn"
         onclick="
-           randomPlay();
-           display();
+          computerChoice = randomPlay();
+           let result;
+           if(computerChoice === 'Bat'){
+              result = 'Computer Won!'
+           } else if(computerChoice === 'Ball')
+           {
+              result = 'Tie!'
+           }
+           else
+           {
+             result = 'User Won!'
+           }
+
+           alert(`you Hava choosen ball and compputer choose ${computerChoice} and ${result}`)
+      
       "
       >
         Ball
@@ -30,44 +56,42 @@
       <button
         class="btn"
         onclick="
-           randomPlay();
-           display();
+           computerChoice =  randomPlay();
+           if(computerChoice === 'Bat'){
+              result = 'Computer won!'
+           } else if(computerChoice === 'Ball')
+           {
+              result = 'Computer Won!'
+           }
+           else
+           {
+             result = 'Tie!'
+           }
+
+           alert(`you Hava choosen stamp and compputer choose ${computerChoice} and ${result}`)
+      
       "
       >
         Stamp
       </button>
     </div>
     <script>
-      let computerChoice;
       function randomPlay() {
         let randomNum = Math.floor(Math.random() * 3 + 1);
+        let choice;
         console.log(randomNum);
         if (randomNum === 1) {
-          computerChoice = "Bat";
+          choice = "Bat";
           console.log("Computer choose bat!");
         } else if (randomNum === 2) {
-          computerChoice = "Ball";
+          choice = "Ball";
           console.log("Computer choose ball!");
         } else {
-          computerChoice = "Stamp";
+          choice = "Stamp";
           console.log("Computer choose Stamp!");
         }
-      }
 
-      function display() {
-        let result;
-
-        if (computerChoice === "Bat") {
-          result = "Math Tie!";
-        } else if (computerChoice === "Ball") {
-          result = "User Won!";
-        } else {
-          result = "Computer Won!";
-        }
-
-        alert(
-          `you Hava choosen bat and compputer choose ${computerChoice} and ${result}`
-        );
+        return choice;
       }
     </script>
   </body>
