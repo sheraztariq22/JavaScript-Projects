@@ -12,40 +12,8 @@
       <button
         class="btn"
         onclick="
-           let randomNum = Math.floor((Math.random() * 3)+1);
-           let computerChoice;
-           console.log(randomNum);
-           if(randomNum === 1){
-              computerChoice = 'Bat';
-              console.log('Computer choose bat!');
-           }
-           else if(randomNum === 2)
-           {
-              computerChoice = 'Ball';
-              console.log('Computer choose ball!');
-
-           }
-           else
-           {
-              computerChoice = 'Stamp';
-              console.log('Computer choose Stamp!');
-           }
-
-           let result;
-
-           if(computerChoice === 'Bat'){
-              result = 'Math Tie!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'User Won!'
-           }
-           else
-           {
-             result = 'Computer Won!'
-           }
-
-           alert(`you Hava choosen bat and compputer choose ${computerChoice} and ${result}`)
-
+           randomPlay();
+           display();
         "
       >
         Bat
@@ -53,37 +21,8 @@
       <button
         class="btn"
         onclick="
-           randomNum = Math.floor((Math.random() * 3)+1);
-           console.log(randomNum);
-           if(randomNum === 1){
-              computerChoice = 'Bat';
-              console.log('Computer choose bat!');
-           }
-           else if(randomNum === 2)
-           {
-              computerChoice = 'Ball';
-              console.log('Computer choose ball!');
-
-           }
-           else
-           {
-              computerChoice = 'Stamp';
-              console.log('Computer choose Stamp!');
-           }
-
-           if(computerChoice === 'Bat'){
-              result = 'Computer won!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'Tie!'
-           }
-           else
-           {
-             result = 'User Won!'
-           }
-
-           alert(`you Hava choosen bat and compputer choose ${computerChoice} and ${result}`)
-      
+           randomPlay();
+           display();
       "
       >
         Ball
@@ -91,42 +30,45 @@
       <button
         class="btn"
         onclick="
-         randomNum = Math.floor((Math.random() * 3)+1);
-           console.log(randomNum);
-           if(randomNum === 1){
-              computerChoice = 'Bat';
-              console.log('Computer choose bat!');
-           }
-           else if(randomNum === 2)
-           {
-              computerChoice = 'Ball';
-              console.log('Computer choose ball!');
-
-           }
-           else
-           {
-              computerChoice = 'Stamp';
-              console.log('Computer choose Stamp!');
-           }
-
-           if(computerChoice === 'Bat'){
-              result = 'User won!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'Computer Won!'
-           }
-           else
-           {
-             result = 'Tie!'
-           }
-
-           alert(`you Hava choosen bat and compputer choose ${computerChoice} and ${result}`)
-      
+           randomPlay();
+           display();
       "
       >
         Stamp
       </button>
     </div>
-    <script></script>
+    <script>
+      let computerChoice;
+      function randomPlay() {
+        let randomNum = Math.floor(Math.random() * 3 + 1);
+        console.log(randomNum);
+        if (randomNum === 1) {
+          computerChoice = "Bat";
+          console.log("Computer choose bat!");
+        } else if (randomNum === 2) {
+          computerChoice = "Ball";
+          console.log("Computer choose ball!");
+        } else {
+          computerChoice = "Stamp";
+          console.log("Computer choose Stamp!");
+        }
+      }
+
+      function display() {
+        let result;
+
+        if (computerChoice === "Bat") {
+          result = "Math Tie!";
+        } else if (computerChoice === "Ball") {
+          result = "User Won!";
+        } else {
+          result = "Computer Won!";
+        }
+
+        alert(
+          `you Hava choosen bat and compputer choose ${computerChoice} and ${result}`
+        );
+      }
+    </script>
   </body>
 </html>
