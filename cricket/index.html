@@ -13,20 +13,8 @@
         class="btn"
         onclick="
            let computerChoice = randomPlay();
-
-           if(computerChoice === 'Bat'){
-              result = 'Tie!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'User Won!'
-           }
-           else
-           {
-             result = 'Computer Won!'
-           }
-
-           alert(`you Hava choosen bat and compputer choose ${computerChoice} and ${result}`)
-         
+           let decision = resultDisplay('Bat', computerChoice);
+           alertMsg('Bat', computerChoice, decision)
         "
       >
         Bat
@@ -35,19 +23,8 @@
         class="btn"
         onclick="
           computerChoice = randomPlay();
-           let result;
-           if(computerChoice === 'Bat'){
-              result = 'Computer Won!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'Tie!'
-           }
-           else
-           {
-             result = 'User Won!'
-           }
-
-           alert(`you Hava choosen ball and compputer choose ${computerChoice} and ${result}`)
+          decision = resultDisplay('Ball', computerChoice);
+          alertMsg('Ball', computerChoice, decision)
       
       "
       >
@@ -57,18 +34,8 @@
         class="btn"
         onclick="
            computerChoice =  randomPlay();
-           if(computerChoice === 'Bat'){
-              result = 'Computer won!'
-           } else if(computerChoice === 'Ball')
-           {
-              result = 'Computer Won!'
-           }
-           else
-           {
-             result = 'Tie!'
-           }
-
-           alert(`you Hava choosen stamp and compputer choose ${computerChoice} and ${result}`)
+           decision = resultDisplay('Stump', computerChoice);
+           alertMsg('Stump', computerChoice, decision)
       
       "
       >
@@ -76,6 +43,11 @@
       </button>
     </div>
     <script>
+      let score = {
+        win: 0,
+        lose: 0,
+        Tie: 0,
+      };
       function randomPlay() {
         let randomNum = Math.floor(Math.random() * 3 + 1);
         let choice;
@@ -92,6 +64,50 @@
         }
 
         return choice;
+      }
+
+      function resultDisplay(userChoice, computerChoice) {
+        if (userChoice === "Bat") {
+          if (computerChoice === "Bat") {
+            score.Tie += 1;
+            return "Tie";
+          } else if (computerChoice === "Ball") {
+            score.win += 1;
+            return "User Won!";
+          } else {
+            score.lose += 1;
+            return "Computer Won!";
+          }
+        } else if (userChoice === "Ball") {
+          if (computerChoice === "Ball") {
+            score.Tie += 1;
+            return "Tie";
+          } else if (computerChoice === "Bat") {
+            score.lose += 1;
+            return "Computer Won!";
+          } else {
+            score.win += 1;
+            return "User Won!";
+          }
+        } else if (userChoice === "Stump") {
+          if (computerChoice === "Ball") {
+            score.win += 1;
+            return "User Won";
+          } else if (computerChoice === "Bat") {
+            score.lose += 1;
+            return "Computer Won!";
+          } else {
+            socre.Tie += 1;
+            return "Tie!";
+          }
+        }
+      }
+
+      function alertMsg(userChoice, computerChoice, result) {
+        alert(
+          `You have choose ${userChoice} and Computer choose ${computerChoice} 
+          the result is ${result} and the User win: ${score.win} Lose:${score.lose} Tie:${score.Tie}`
+        );
       }
     </script>
   </body>
