@@ -48,6 +48,9 @@
         lose: 0,
         Tie: 0,
       };
+      let num = score;
+
+      let { win, lose, Tie } = score;
       function randomPlay() {
         let randomNum = Math.floor(Math.random() * 3 + 1);
         let choice;
@@ -69,35 +72,35 @@
       function resultDisplay(userChoice, computerChoice) {
         if (userChoice === "Bat") {
           if (computerChoice === "Bat") {
-            score.Tie += 1;
+            Tie += 1;
             return "Tie";
           } else if (computerChoice === "Ball") {
-            score.win += 1;
+            win += 1;
             return "User Won!";
           } else {
-            score.lose += 1;
+            lose += 1;
             return "Computer Won!";
           }
         } else if (userChoice === "Ball") {
           if (computerChoice === "Ball") {
-            score.Tie += 1;
+            Tie += 1;
             return "Tie";
           } else if (computerChoice === "Bat") {
-            score.lose += 1;
+            lose += 1;
             return "Computer Won!";
           } else {
-            score.win += 1;
+            win += 1;
             return "User Won!";
           }
         } else if (userChoice === "Stump") {
           if (computerChoice === "Ball") {
-            score.win += 1;
+            win += 1;
             return "User Won";
           } else if (computerChoice === "Bat") {
-            score.lose += 1;
+            lose += 1;
             return "Computer Won!";
           } else {
-            socre.Tie += 1;
+            Tie += 1;
             return "Tie!";
           }
         }
@@ -106,7 +109,7 @@
       function alertMsg(userChoice, computerChoice, result) {
         alert(
           `You have choose ${userChoice} and Computer choose ${computerChoice} 
-          the result is ${result} and the User win: ${score.win} Lose:${score.lose} Tie:${score.Tie}`
+          the result is ${result} and the User win: ${win} Lose:${lose} Tie:${Tie}`
         );
       }
     </script>
